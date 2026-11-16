@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>우미 점메추</title>
+<meta name="description" content="팀별로 메뉴를 넣고 룰렛·슬롯·핀볼로 오늘의 메뉴를 고르는 우미 사내 점심 게임">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23E8542F'/%3E%3Cpath d='M32 32 L32 4 A28 28 0 0 1 56 46 Z' fill='%23F7A531'/%3E%3Cpath d='M32 32 L56 46 A28 28 0 0 1 10 48 Z' fill='%233BB273'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a href="#/" class="brand" aria-label="우미 점메추 처음으로">
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#E8542F"/><path d="M32 32 L32 4 A28 28 0 0 1 56 46 Z" fill="#F7A531"/><path d="M32 32 L56 46 A28 28 0 0 1 10 48 Z" fill="#3BB273"/><circle cx="32" cy="32" r="7" fill="#fff"/></svg>
+    <span>우미 <b>점메추</b></span>
+  </a>
+  <div class="top-right">
+    <a href="#/lists" id="navLists" class="nav-link">후보 목록</a>
+    <span id="dbBadge" class="badge"></span>
+    <button id="muteBtn" class="icon-btn" type="button" aria-label="소리 켜기/끄기"></button>
+  </div>
+</header>
+
+<main id="app" class="wrap"></main>
+
+<div id="result" class="overlay" hidden>
+  <div class="result-card" role="dialog" aria-modal="true" aria-labelledby="resName">
+    <div class="result-mode" id="resMode"></div>
+    <p class="result-label">오늘의 메뉴는</p>
+    <div class="result-name" id="resName"></div>
+    <p class="result-meta" id="resMeta"></p>
+    <div class="result-actions">
+      <button id="resAgain" class="btn ghost" type="button">이 메뉴 빼고 다시</button>
+      <button id="resOk" class="btn primary" type="button">좋아요!</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
