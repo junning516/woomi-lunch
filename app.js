@@ -120,7 +120,8 @@ function sortLists(ls) { return ls.sort((a, b) => a.name.localeCompare(b.name, '
 
 // ───────────────────────── 저장소: Supabase (공유 DB, REST 직접 호출)
 const RemoteStore = {
-  base: REMOTE ? CFG.supabaseUrl.trim().replace(/\/+$/, '') + '/rest/v1/' : '',
+  // 주소를 ".../rest/v1/"까지 붙여 넣어도 동작하도록 정리
+  base: REMOTE ? CFG.supabaseUrl.trim().replace(/\/+$/, '').replace(/\/rest\/v1$/i, '') + '/rest/v1/' : '',
   headers(extra) {
     const key = CFG.supabaseKey.trim();
     const h = { apikey: key, 'Content-Type': 'application/json' };
